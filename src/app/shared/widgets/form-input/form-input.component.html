@@ -1,0 +1,9 @@
+<div class="form-group boxed animated">
+  <div class="input-wrapper">
+
+    @if(label){ <label class="form-label" [for]="id">{{label}}</label> }
+
+    <input [type]="type" class="form-control" [formControl]="control" [name]="id" [id]="id" [placeholder]="placeholder">
+
+  </div>
+</div>

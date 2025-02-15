@@ -1,1 +1,55 @@
-<p>register works!</p>
+<!-- App Header -->
+<div class="appHeader no-border transparent position-absolute">
+  <div class="left">
+    <a href="#" class="headerButton goBack">
+      <i class="bi bi-chevron-left"></i>
+      <!-- <ion-icon name="chevron-back-outline"></ion-icon> -->
+    </a>
+  </div>
+  <div class="pageTitle"></div>
+  <div class="right">
+    <a routerLink="/auth/login" class="headerButton">
+      Giriş Yap
+    </a>
+  </div>
+</div>
+<!-- * App Header -->
+<!-- App Capsule -->
+<div id="appCapsule">
+
+  <div class="login-form">
+
+    <div class="section">
+      <h1>Kayıt Ol</h1>
+      <h4>Bize katılmak için formu doldurun</h4>
+      {{registerForm.valid}}
+    </div>
+
+    <div class="section mt-2 mb-5">
+
+      <form [formGroup]="registerForm">
+
+        <app-form-input id="firstName" [control]="registerForm.controls.firstName" placeholder="İsim"></app-form-input>
+        <app-form-input id="lastName" [control]="registerForm.controls.lastName" placeholder="Soyisim"></app-form-input>
+        <app-form-input id="email" [control]="registerForm.controls.email" placeholder="Email"></app-form-input>
+        <app-form-input id="password" [control]="registerForm.controls.password" placeholder="Şifre" type="password"></app-form-input>
+        <app-form-input id="confirmPassword" [control]="registerForm.controls.confirmPassword" placeholder="Şifre Tekrarı" type="password"></app-form-input>
+        <app-form-input id="phoneNumber" [control]="registerForm.controls.phoneNumber"  placeholder="Telefon Numarası"></app-form-input>
+
+        <div class=" mt-1 text-start">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="customCheckb1">
+            <label class="form-check-label" for="customCheckb1"><a href="#">Şartlar &
+                Koşulları</a> Kabul Ediyorum</label>
+          </div>
+        </div>
+
+        <div class="form-button-group">
+          <button type="submit" class="btn btn-primary btn-block btn-lg" (click)="register()">Kayıt Ol</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<!-- * App Capsule -->
