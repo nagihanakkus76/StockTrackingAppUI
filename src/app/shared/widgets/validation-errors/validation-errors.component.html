@@ -1,0 +1,7 @@
+@if (isInvalid(control)) {
+  @for(item of validationMessages; track $index) {
+    @if (control.hasError(item.type.toString())) {
+      <app-validation-error-item>{{item.message}}</app-validation-error-item>
+    }
+  }
+}

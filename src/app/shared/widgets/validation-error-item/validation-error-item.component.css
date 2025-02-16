@@ -1,0 +1,10 @@
+.error-list {
+  text-align: start;
+  color: red;
+  list-style-type: none;
+  padding-left: 14px;
+}
+
+.error-list::before {
+  content: "• ";
+}

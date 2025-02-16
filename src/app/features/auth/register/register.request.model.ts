@@ -24,6 +24,8 @@ export interface RegisterFormModel extends IBaseFormModel {
 
   phoneNumber: FormControl<string | null>;
   profilePicture: FormControl<string | null>;
+
+  isAgreementConfirmed: FormControl<boolean | null>;
 }
 
 

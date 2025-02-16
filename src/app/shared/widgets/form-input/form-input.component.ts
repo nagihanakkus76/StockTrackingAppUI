@@ -6,7 +6,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   selector: 'app-form-input',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './form-input.component.html'
+  templateUrl: './form-input.component.html',
+  styleUrl: './form-input.component.css'
 })
 export class FormInputComponent {
   @Input() type: string = 'text';
@@ -14,4 +15,6 @@ export class FormInputComponent {
   @Input() label?: string;
   @Input() placeholder?: string;
   @Input({ required: true }) control!: FormControl<any>;
+  @Input() prefix?: string;
+
 }

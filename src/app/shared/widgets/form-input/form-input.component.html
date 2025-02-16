@@ -1,9 +1,16 @@
-<div class="form-group boxed animated">
+<div class="c-form-group form-group boxed animated">
   <div class="input-wrapper">
 
     @if(label){ <label class="form-label" [for]="id">{{label}}</label> }
 
-    <input [type]="type" class="form-control" [formControl]="control" [name]="id" [id]="id" [placeholder]="placeholder">
+    @if(prefix){
+    <div class="input-group c-input-group">
+      <span class="input-group-text c-input-group-text" id="basic-addon1">{{prefix}}</span>
+      <input [type]="type" class="form-control" [formControl]="control" [name]="id" [id]="id" [placeholder]="placeholder" aria-describedby="basic-addon1">
+    </div>
+  }@else {
+    <input [type]="type" class="form-control" [formControl]="control" [name]="id" [id]="id" [placeholder]="placeholder" aria-describedby="basic-addon1">
+  }
 
   </div>
 </div>

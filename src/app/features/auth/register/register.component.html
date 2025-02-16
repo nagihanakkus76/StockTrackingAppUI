@@ -22,27 +22,40 @@
     <div class="section">
       <h1>Kayıt Ol</h1>
       <h4>Bize katılmak için formu doldurun</h4>
-      {{registerForm.valid}}
     </div>
 
     <div class="section mt-2 mb-5">
 
       <form [formGroup]="registerForm">
 
-        <app-form-input id="firstName" [control]="registerForm.controls.firstName" placeholder="İsim"></app-form-input>
-        <app-form-input id="lastName" [control]="registerForm.controls.lastName" placeholder="Soyisim"></app-form-input>
-        <app-form-input id="email" [control]="registerForm.controls.email" placeholder="Email"></app-form-input>
-        <app-form-input id="password" [control]="registerForm.controls.password" placeholder="Şifre" type="password"></app-form-input>
-        <app-form-input id="confirmPassword" [control]="registerForm.controls.confirmPassword" placeholder="Şifre Tekrarı" type="password"></app-form-input>
-        <app-form-input id="phoneNumber" [control]="registerForm.controls.phoneNumber"  placeholder="Telefon Numarası"></app-form-input>
+        <app-form-input [control]="control.firstName" id="firstName" placeholder="İsim" />
+        <app-validation-errors [control]="control.firstName" [validationMessages]="validationMessages.fistName" />
 
-        <div class=" mt-1 text-start">
+        <app-form-input [control]="control.lastName" id="lastName" placeholder="Soyisim" />
+        <app-validation-errors [control]="control.lastName" [validationMessages]="validationMessages.lastName" />
+
+        <app-form-input [control]="control.email" id="email" placeholder="Email" />
+        <app-validation-errors [control]="control.email" [validationMessages]="validationMessages.email" />
+
+
+        <app-form-input [control]="control.password" id="password" placeholder="Şifre" type="password" />
+        <app-validation-errors [control]="control.password" [validationMessages]="validationMessages.password" />
+
+        <app-form-input [control]="control.confirmPassword" id="confirmPassword" placeholder="Şifre Tekrarı" type="password" />
+        <app-validation-errors [control]="control.confirmPassword"
+          [validationMessages]="validationMessages.confirmPassword" />
+
+        <app-form-input [control]="control.phoneNumber" id="phoneNumber" placeholder="Telefon Numarası" type="tel" prefix="+90" />
+        <app-validation-errors [control]="control.phoneNumber" [validationMessages]="validationMessages.phoneNumber" />
+
+        <!-- <div class=" mt-1 text-start">
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="customCheckb1">
+            <input type="checkbox" class="form-check-input" id="customCheckb1"
+              [formControl]="registerForm.controls.isAgreementConfirmed">
             <label class="form-check-label" for="customCheckb1"><a href="#">Şartlar &
                 Koşulları</a> Kabul Ediyorum</label>
           </div>
-        </div>
+        </div> -->
 
         <div class="form-button-group">
           <button type="submit" class="btn btn-primary btn-block btn-lg" (click)="register()">Kayıt Ol</button>
